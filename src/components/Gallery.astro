@@ -1,0 +1,86 @@
+---
+const images = [
+  { src: 'https://images.unsplash.com/photo-1578619741025-66a87aa42ebc?w=700&auto=format&fit=crop&q=80', label: 'Peinado', span: 'row' },
+  { src: 'https://images.unsplash.com/photo-1676507845365-f7019bbbd7f2?w=700&auto=format&fit=crop&q=80', label: 'Maquillaje' },
+  { src: 'https://images.unsplash.com/photo-1604654894611-6973b376cbde?w=700&auto=format&fit=crop&q=80', label: 'Nail Art' },
+  { src: 'https://images.unsplash.com/photo-1564141696939-9eb6e957ccfc?w=900&auto=format&fit=crop&q=80', label: 'Tratamiento', span: 'col' },
+];
+---
+
+<section id="galeria" class="relative py-20 md:py-24 px-8 md:px-12 bg-primary-soft overflow-hidden">
+
+  <div class="hero-grain absolute inset-0 opacity-[0.06] pointer-events-none"/>
+  <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-dark/30 blur-[120px] pointer-events-none"/>
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-dark/30 blur-[140px] pointer-events-none"/>
+
+  <div class="max-w-[1200px] mx-auto relative">
+
+    <div class="relative z-10 max-w-[520px]">
+
+      <p class="text-[clamp(1rem,2vw,1rem)] tracking-[0.3em] uppercase text-base font-light text-shadow-md mb-10  ">
+        Nuestro trabajo
+      </p>
+
+      <h2 class="font-display leading-[1.1]">
+        <span class="block text-[clamp(2rem,5vw,4rem)] text-base/80 text-shadow-md">
+          Donde la belleza
+        </span>
+        <em class="block text-[clamp(2rem,5vw,4rem)] italic text-accent text-shadow-md">
+          toma forma
+        </em>
+      </h2>
+
+    </div>
+
+    <div class="relative min-h-screen md:min-h-[50vh] mt-16 md:mt-0">
+
+      {images.map((img, i) => (
+        <div
+          class={[
+            "group absolute transition-all duration-500 cursor-pointer",
+            
+            i === 0 ? "-top-[5%] md:-top-[20%] lg:-top-[55%] right-[5%] lg:right-0 w-55 md:w-[20vw]" :
+            i === 1 ? "top-[20%] md:top-0 right-[30%] md:right-[33%] lg:right-[35%] w-45 md:w-[18vw]" :
+            i === 2 ? "top-[58%] md:top-[35%] lg:top-[20%] left-0 md:left-[2%] w-60 md:w-[25vw]" :
+                      "top-[85%] md:top-[65%] lg:top-[25%] right-0  lg:-right-20 w-55 md:w-[25vw]"
+          ].join(" ")}
+        >
+
+          <div class="relative overflow-hidden 
+                      shadow-[0_10px_20px_rgba(0,0,0,0.35)]
+                      group-hover:shadow-[0_25px_60px_rgba(0,0,0,0.45)]
+                      scale-100 group-hover:scale-110
+                      transition-all duration-500 p-2 md:p-4 border border-accent">
+
+            <img
+              src={img.src}
+              alt={img.label}
+              class="w-full h-full object-cover
+              transition-transform duration-700 ease-out grayscale-100 group-hover:grayscale-0"
+            />
+
+            <div class="absolute inset-0 bg-dark/20 group-hover:bg-black/20 transition-all duration-500"/>
+
+            <div class="absolute bottom-3 left-4 right-4 flex justify-between items-end bg-primary-soft py-1 px-4">
+
+              <span class="text-[0.65rem] tracking-[0.2em] uppercase
+                           text-base/80 group-hover:text-accent
+                           transition-colors duration-300">
+                {img.label}
+              </span>
+
+              <span class="text-[0.7rem] tracking-[0.3em] text-base/40 group-hover:text-accent ">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+
+            </div>
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+
+</section>

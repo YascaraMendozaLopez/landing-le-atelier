@@ -1,0 +1,88 @@
+<section class="relative min-h-svh flex items-center overflow-hidden bg-dark">
+
+  <div class="absolute inset-0">
+    <img 
+      src="https://images.unsplash.com/photo-1706629503650-cade709d15e3?q=80&w=2000&auto=format&fit=crop"
+      alt="Salon belleza"
+      class="w-full h-full object-cover opacity-[0.4]"
+    />
+
+    <div class="absolute inset-0 bg-linear-to-b md:bg-linear-to-br from-base via-base/80  to-primary/70"/>
+  </div>
+
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute right-0 bottom-0 w-[300px] h-[300px] bg-base/80 blur-[150px]"></div>
+    <div class="hero-grain absolute inset-0 opacity-[0.1]"></div>
+  </div>
+
+  <div class="relative z-10 max-w-[1200px] mx-auto w-full px-8 md:px-12 pt-26 md:pt-36 pb-24">
+
+    <h1 class="font-display leading-[1.05] mb-6">
+
+      <span class="block text-[clamp(3.2rem,8vw,6.5rem)] font-medium italic text-primary text-shadow-md
+                   opacity-0 animate-[fadeUp_0.8s_0.35s_forwards] text-center">
+        El arte
+      </span>
+
+      <span class="block text-[clamp(3.2rem,8vw,6.5rem)] font-medium tracking-[-0.01em] text-dark/90 text-shadow-md
+                   opacity-0 animate-[fadeUp_0.8s_0.5s_forwards] text-center">
+        de la belleza
+      </span>
+
+    </h1>
+
+    <p class="text-[0.8rem] md:text-[1rem] tracking-[0.1em] md:tracking-[0.28em] uppercase text-primary-soft mb-22 md:mb-12
+              opacity-0 animate-[fadeUp_0.8s_0.65s_forwards] text-center ">
+      Colorimetría · Uñas · Maquillaje
+    </p>
+
+    <div class="flex gap-6 flex-wrap opacity-0 animate-[fadeUp_0.8s_0.8s_forwards] justify-center">
+
+      <a href="#contacto"
+         class="w-full md:w-fit text-center text-[0.72rem] tracking-[0.22em] uppercase font-medium px-8 py-3.5 shadow-md hover:scale-105
+                bg-primary-soft text-base border border-primary
+                hover:bg-primary
+                transition-all duration-300">
+        Reservar cita
+      </a>
+
+      <a href="#servicios"
+         class="w-full md:w-fit text-center text-[0.72rem] tracking-[0.22em] uppercase font-medium px-8 py-3.5 shadow-md
+                bg-base/70 text-dark border border-dark/20 hover:scale-105
+                hover:border-dark
+                transition-all duration-300">
+        Ver servicios
+      </a>
+
+    </div>
+  </div>
+
+  <div class="absolute right-8 bottom-16 z-10 hidden md:flex items-center gap-3 
+              [writing-mode:vertical-rl] opacity-0 animate-[fadeIn_1s_1.2s_forwards]">
+    <div class="w-px h-14 bg-primary-soft"></div>
+    <span class="text-[0.65rem] tracking-[0.3em] uppercase text-dark font-medium">
+      Estudio de belleza
+    </span>
+  </div>
+
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 opacity-0 animate-[fadeIn_1s_1.4s_forwards]">
+    <span class="block w-2 h-12 bg-gradient-to-b from-primary-soft to-transparent rounded-2xl 
+                 animate-[scrollPulse_2s_ease-in-out_infinite]"></span>
+  </div>
+
+</section>
+
+<style>
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(0.8); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  }
+</style>
