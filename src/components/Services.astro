@@ -1,0 +1,98 @@
+---
+import LogoIcon from "../assets/Logo.astro";
+
+const services = [
+  {
+    num: '01',
+    title: 'Colorimetría & Cabello',
+    desc: 'Técnicas europeas adaptadas a tu tono. Transformación con precisión y estilo.',
+  },
+  {
+    num: '02',
+    title: 'Maquillaje Artístico',
+    desc: 'Desde lo natural hasta lo editorial. Acabado impecable de larga duración.',
+  },
+  {
+    num: '03',
+    title: 'Nail Art & Uñas',
+    desc: 'Diseño, técnica y detalle en cada trazo. Uñas que hablan por sí solas.',
+  },
+];
+---
+
+<section id="servicios" class="bg-base/90 relative overflow-hidden py-20 md:py-24">
+  <div class="hero-grain absolute inset-0 opacity-[0.08] pointer-events-none"/>
+  <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/30 blur-[110px] pointer-events-none"/>
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/20 blur-[140px] pointer-events-none"/>
+
+  <div class="max-w-[1000px] mx-auto px-8  text-center">
+    <p class="text-[clamp(1rem,2vw,1rem)] tracking-[0.3em] uppercase text-primary font-light text-shadow-xs mb-6">
+      Nuestros Servicios
+    </p>
+
+    <h2 class="font-display leading-[1.05] mt-4">
+      <span class="block text-[clamp(2rem,5vw,4rem)] text-dark tracking-[-0.02em] text-shadow-md">
+        Belleza con intención
+      </span>
+      <em class="block text-[clamp(2rem,5vw,4rem)] italic text-primary text-shadow-md">
+        y detalle
+      </em>
+    </h2>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12 pt-16
+              grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    {services.map((s) => (
+      <div class="group relative p-8 rounded-2xl
+                  overflow-hidden
+                  border-2 border-primary/20
+                  bg-base/60 backdrop-blur-md
+                  shadow-[0_10px_30px_rgba(0,0,0,0.1)]
+                  transition-all duration-500
+                  hover:-translate-y-2 hover:border-3
+                  hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)]
+                  hover:border-primary">
+
+        <div class="relative flex flex-col gap-6">
+          <LogoIcon
+            size="120"
+            class="absolute -right-20 -bottom-10 -z-10 text-primary/10 -rotate-45
+                    group-hover:text-primary/20"
+          />
+          <span class="text-[1rem] tracking-[0.3em] text-primary/40
+                       group-hover:text-primary transition-colors duration-400">
+            {s.num}
+          </span>
+
+          <h3 class="font-display italic text-[1.6rem] text-primary-soft/80
+                     group-hover:text-primary-soft transition-colors duration-400">
+            {s.title}
+          </h3>
+
+          <div class="w-8 h-px bg-primary/30
+                      group-hover:w-14 group-hover:bg-primary
+                      transition-all duration-500"></div>
+
+          <p class="text-[0.85rem] text-dark/50 leading-relaxed">
+            {s.desc}
+          </p>
+
+          <!-- CTA -->
+          <a
+            href="#contacto"
+            class="mt-4 text-[0.7rem] tracking-[0.25em] uppercase font-medium
+                   text-primary border-b border-primary/30 pb-0.5 w-fit
+                   hover:border-primary transition-all duration-300"
+          >
+            Reservar →
+          </a>
+
+        </div>
+
+      </div>
+    ))}
+
+  </div>
+
+</section>
